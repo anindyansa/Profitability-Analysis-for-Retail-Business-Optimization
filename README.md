@@ -5,53 +5,56 @@
 ### Project Overview
 Power BI dashboard analyzing profit and revenue across Home Appliances, Groceries, Apparel, and Electronics. Includes data cleaning, formatting, and visualization to turn raw sales data into actionable business insights.
 
-<img width="901" height="505" alt="image" src="https://github.com/user-attachments/assets/7b84bf62-311f-4868-9747-6b3fe815e560" />
+<p align="center">  
+   <img width="901" height="505" alt="image" src="https://github.com/user-attachments/assets/7b84bf62-311f-4868-9747-6b3fe815e560" />
+</p>
 
 ### Data Sources 
-Untuk analisis profitabilitas ini, kami menggunakan tiga dataset utama yang mendukung tujuan bisnis dalam mengidentifikasi faktor profitabilitas berdasarkan produk dan kategori. Berikut adalah deskripsi setiap dataset:
+For this profitability analysis, we used three main datasets that support the business objective of identifying profitability factors by product and category. Below is a description of each dataset:
 
-**a.) Sales_Data** : Dataset ini mencakup informasi terkait penjualan produk pada berbagai kategori dan wilayah. Dataset ini berisi 100 entri dengan rincian mengenai produk, kategori, wilayah, serta jalur distribusi. Data ini berfokus pada detail penjualan produk yang digunakan untuk menghitung pendapatan.
+**a.) Sales_Data** : This dataset contains information related to product sales across various categories and regions. It includes 100 entries detailing products, categories, regions, and distribution channels. The data focuses on product sales details used for revenue calculation.
 
-**b.) Cost_Profit_Data** : Dataset ini mencakup data terkait biaya produksi, biaya d istribusi, dan profit netto. Data ini berfungsi untuk menghitung dan menganalisis margin profitabilitas produk setelah mempertimbangkan berbagai komponen biaya.
+**b.) Cost_Profit_Data** : This dataset includes data on production costs, distribution costs, and net profit. It serves to calculate and analyze product profitability margins by taking into account different cost components.
 
-**c.) Additional_Info** : Dataset ini berisi data tambahan terkait musim penjualan, tanggal penjualan, dan demografi pelanggan. Data ini membantu dalam memahami tren musiman serta segmentasi pelanggan yang relevan dalam profitabilitas.
+**c.) Additional_Info** : This dataset provides supplementary information on sales seasons, sales dates, and customer demographics. It helps in understanding seasonal trends as well as customer segmentation relevant to profitability.
 
-Berikut adalah kolom dataset keseluruhan beserta deskripsinya :
+The following are the complete dataset columns along with their descriptions:
 
-|heading1|heading2|
+|Column|Description|
 |--------|--------|
-|Product_ID|ID unik untuk setiap produk|
-|Product_Category|Kategori produk (misalnya, Elektronik, Pakaian, Peralatan Rumah Tangga)|
-|Region|Wilayah penjualan produk (misalnya, Jakarta, Surabaya, Bali)|
-|Sales_Channel|	Saluran penjualan (misalnya, Online, Toko Fisik)|
-|Unit_Price|	Harga jual per unit produk|
-|Units_Sold|	Jumlah unit terjual|
-|Total_Revenue|	Total pendapatan dari produk tersebut|
-|Production_Cost|	Biaya produksi per unit|
-|Distribution_Cost|	Biaya distribusi per unit|
-|Discount_Percentage|	Persentase diskon yang diberikan|
-|Net_Profit|	Keuntungan bersih setelah dikurangi biaya produksi, distribusi, dan diskon|
-|Season|	Musim atau kuartal penjualan (misalnya, Q1, Q2, dst)|
-|Date_Sold|	Tanggal penjualan produk|
-|Customer_Age_Group|	Kelompok umur pelanggan (misalnya, 18-25, 26-35, 36-45)|
+|Product_ID|Unique identifier for each product|
+|Product_Category|Product category (e.g., Electronics, Apparel, Household Appliances)|
+|Region|Sales region of the product (e.g., Jakarta, Surabaya, Bali)|
+|Sales_Channel|Sales channel (e.g., Online, Physical Store)|
+|Unit_Price|Selling price per unit|
+|Units_Sold|Number of units sold|
+|Total_Revenue|Total revenue generated from the product|
+|Production_Cost|Production cost per unit|
+|Distribution_Cost|Distribution cost per unit|
+|Discount_Percentage|Percentage of discount applied|
+|Net_Profit|Net profit after deducting production, distribution, and discount costs|
+|Season|Sales season or quarter (e.g., Q1, Q2, etc.)|
+|Date_Sold|Date of product sale|
+|Customer_Age_Group|Customer age group (e.g., 18–25, 26–35, 36–45)|
 
 ### Data Cleaning/Data Preparation 
-Tahapan persiapan dan pembersihan data bertujuan untuk memastikan kualitas dan konsistensi data yang akan dianalisis. Proses ini melibatkan beberapa langkah penting yang dirancang untuk menangani data yang tidak lengkap, tidak sesuai format, atau tidak konsisten. Adapun tahapan yang dilakukan meliputi:
+The data preparation and cleaning stage aims to ensure data quality and consistency for analysis. This process involves several steps to handle incomplete, inconsistent, or improperly formatted data. The main steps include:
 
-**1. Penanganan Data Hilang (Missing Values)** 
-- Kolom Discount_Percentage :
-Dalam kolom ini, jika terdapat nilai yang kosong atau tidak diisi, diasumsikan bahwa tidak ada diskon yang diberikan untuk entri tersebut. Oleh karena itu, nilai kosong diisi dengan “0%” untuk menghindari ketidaksesuaian dalam analisis.
-- Kolom Net_Profit :
-Nilai yang bersifat 'null' atau kosong pada kolom ini dihapus dari dataset untuk menjaga integritas data, mengingat profit netto merupakan metrik penting yang harus tersedia dalam setiap entri produk.
+**1. Handling Missing Values** 
+- Discount_Percentage column: If this column contains missing values, it is assumed that no discount was applied. Therefore, missing entries are replaced with “0%” to avoid inconsistencies during analysis.
+- Net_Profit column: Rows with missing or null values in this column are removed from the dataset to maintain data integrity, since net profit is a critical metric that must be available for every product entry.
 
-**2.	Konsistensi Format Tanggal**
-- Kolom Date_Sold : Untuk menjaga konsistensi data, kolom Date_Sold diselaraskan dengan format standar (misalnya, YYYY-MM-DD). Standarisasi ini bertujuan untuk mempermudah proses analisis yang melibatkan dimensi waktu, seperti identifikasi tren musiman atau perhitungan penjualan bulanan.
+**2. Ensuring Date Format Consistency**
+- Date_Sold column: To maintain consistency, the Date_Sold column is standardized to a uniform format (e.g., YYYY-MM-DD). This standardization facilitates time-based analyses, such as identifying seasonal trends or calculating monthly sales.
 
 ### Results/Findings 
 The analysis results are summarized as follows :
+
 **1. Net Profit Overview – KPI Card**
-   
+
+<p align="center">   
    <img width="201" height="222" alt="image" src="https://github.com/user-attachments/assets/535d49bb-b5b6-4fe0-86fd-64318955855d" />
+</p>
 
 ***Data*** : `Total_Revenue`, `Net_Profit` 
 
@@ -61,7 +64,7 @@ The analysis results are summarized as follows :
 - By region, Surabaya recorded the highest net profit of Rp268K, while Bali posted the lowest at Rp80K.
 - Initial findings indicate that high revenue does not always translate into high net profit, making cost efficiency in each region a critical factor.
   
-***Managerial Implementation*** : 
+***Managerial Recommendation*** : 
 - Net profit can serve as a key indicator of the company’s financial health during January–April 2024.
 - Comparing revenue, costs, and net profit helps identify the proportion of expenses relative to gross revenue.
 - The difference shown (in terms of marginal cost) can be used as a basis to evaluate whether distribution, production, and discount policies remain efficient or instead create unnecessary burdens.
@@ -69,8 +72,10 @@ The analysis results are summarized as follows :
 
 **2. Category Comparison Performance – Table with Slicer**
 
+<p align="center">  
    <img width="327" height="226" alt="image" src="https://github.com/user-attachments/assets/7642ada3-ba3b-4e96-aed9-2ef041975c7d" />
-   
+</p>  
+ 
 ***Data*** : `Product_Category`, `Units_Sold`  ,  `Units_Sold` , `Total_Revenue`  ,`Net_Profit` ,  `Region` , `Date_Sold`   
 
 ***Insight*** :
@@ -82,7 +87,7 @@ The analysis results are summarized as follows :
 - Electronics recorded the highest revenue ($814,995) but the lowest profit ($117,693 | 15.4% margin) due to high cost/distribution burdens.
 - Surabaya achieved the highest profit ($267,888), mainly from Electronics and Groceries. However, Home Appliances showed weak margins despite strong sales volume. Notably, no sales were recorded in April, signaling distribution or seasonal demand issues. Bali posted the lowest profit ($79,556) with heavy reliance on Home Appliances, causing volatility. In April, Electronics sales led to a major loss (- $41,302), turning overall profit negative.
 
-***Managerial Implementation*** : 
+***Managerial Recommendation*** : 
 - Groceries act as a cash cow with high margins and low risk, making them a top priority for expansion due to consistent contribution.
 - Home Appliances, despite large profits, remain inefficient as high sales volume does not align with margins. Distribution and production need evaluation to boost effectiveness.
 - Electronics face pressured margins; cost reviews, discount strategies, supplier renegotiation, or price adjustments are necessary to improve profitability.
@@ -91,9 +96,11 @@ The analysis results are summarized as follows :
 - Surabaya risks losing momentum; improving Home Appliances’ profitability is key for regional stability.
 - Bali is overly dependent on Home Appliances; diversification into Groceries and cost efficiency in Electronics & Apparel are crucial for mid-term growth.
 
-3. Discount Effectiveness Analysis – Line & Stacked Bar Chart
+**3. Discount Effectiveness Analysis – Line & Stacked Bar Chart**
 
+<p align="center">
   <img width="324" height="222" alt="image" src="https://github.com/user-attachments/assets/8fc08f33-940d-424b-8079-1812d00cfa41" />
+</p>
 
 ***Data*** : `Product_Category` , `Total_Revenue` , `Net_Profit` , `Discount_Percentage` 
 
@@ -104,91 +111,80 @@ The analysis results are summarized as follows :
 - Home Appliances: Highest profit ($257,709) with a moderate discount rate (9%). This reflects an effective discount strategy—moderate in size, yet able to generate high revenue ($912,539) while sustaining strong margins.
 - Apparel: Medium profit contribution ($164,244) with a 10% discount. Compared to categories with similar revenue, Apparel is less efficient in leveraging discounts to improve profit, suggesting the need for revised promotion strategies and product positioning.
 
-Managerial Implementation : 
+***Managerial Recommendation*** : 
 - Home Appliances: Maintain moderate discounts (7–10%) to safeguard profitability, position as a cash cow, and prioritize long-term promotional investments.
+- Groceries: Apply aggressive yet controlled discounts (max 12%). Alternatives include bundling or subscription models (e.g., monthly packages) to sustain sales volume without eroding margins.
+- Electronics: Reassess cost structure in production and logistics. Priorities include supplier renegotiation and supply chain efficiency. If discounts prove ineffective, consider price repositioning or reducing category focus.
+- Apparel: Avoid excessive discounting outside peak seasons. Instead, emphasize product differentiation or limited-edition campaigns to add value without relying heavily on discounts.
+- Selective Discounting: Apply a loss leader strategy only to highly competitive categories or new products, while retaining premium pricing in high-margin categories to preserve brand value.
+- Cross-Subsidizing: Utilize profits from high-margin categories (Home Appliances, Groceries) to support categories that require deeper discounts as market entry levers.
+- Marketing Targeting: Position discount-sensitive categories for seasonal promotions, while profitable categories without discount reliance should focus on brand building.
 
-Groceries: Apply aggressive yet controlled discounts (max 12%). Alternatives include bundling or subscription models (e.g., monthly packages) to sustain sales volume without eroding margins.
+**4. Sales Volume Dynamics – Clustered Bar Chart**
 
-Electronics: Reassess cost structure in production and logistics. Priorities include supplier renegotiation and supply chain efficiency. If discounts prove ineffective, consider price repositioning or reducing category focus.
-
-Apparel: Avoid excessive discounting outside peak seasons. Instead, emphasize product differentiation or limited-edition campaigns to add value without relying heavily on discounts.
-
-Selective Discounting: Apply a loss leader strategy only to highly competitive categories or new products, while retaining premium pricing in high-margin categories to preserve brand value.
-
-Cross-Subsidizing: Utilize profits from high-margin categories (Home Appliances, Groceries) to support categories that require deeper discounts as market entry levers.
-
-Marketing Targeting: Position discount-sensitive categories for seasonal promotions, while profitable categories without discount reliance should focus on brand building.
-
-4. Sales Volume Dynamics – Clustered Bar Chart
-   
+<p align="center">   
    <img width="369" height="226" alt="image" src="https://github.com/user-attachments/assets/eb08c5de-bee3-4692-abbb-bbff7ed6a526" />
-
+</p>
+   
 ***Data*** : `Product_Category` , `Units_Sold` 
 
 ***Insight*** :
-•	Visualisasi ini memberikan gambaran mengenai dinamika jumlah unit terjual (unit sold) per bulan untuk masing-masing kategori produk. Analisis ini bermanfaat untuk menilai konsistensi permintaan, mengidentifikasi faktor pendorong maupun penghambat penjualan, serta memahami bagaimana volume penjualan memengaruhi capaian revenue dan profitabilitas perusahaan.
-•	Januari menjadi periode dengan performa awal yang kuat (8,098 unit), menghasilkan profit $482,085. Hampir semua kategori mencatatkan kontribusi positif, terutama Apparel ($145,310) dan Electronics ($131,363). Tingginya volume di bulan ini menandakan momentum awal tahun yang produktif.
-•	Februari mencatat jumlah unit tertinggi sepanjang periode (8,678 unit), namun profit justru turun signifikan menjadi $326,262. Hal ini menunjukkan bahwa kenaikan volume tidak otomatis diikuti profitabilitas, diduga karena tekanan biaya distribusi maupun strategi diskon yang kurang tepat, terutama pada Electronics yang hanya menyumbang $20,058 meski terjual 1,133 unit.
-•	Maret mengalami penurunan volume (7,294 unit) tetapi justru profit meningkat tajam menjadi $451,834. Pola ini mengindikasikan adanya perbaikan efisiensi biaya atau penyesuaian strategi harga. Groceries menjadi penyumbang terbesar ($146,503) meski tidak mencatat volume tertinggi, yang menunjukkan efektivitas pengelolaan margin.
-•	April menunjukkan penurunan tajam (3.041 unit) dan profit terendah ($175,384). Hampir seluruh kategori melemah, terutama Apparel yang hanya mencatat 474 unit dengan profit $17,036. Situasi ini merefleksikan kerentanan permintaan di akhir periode, sehingga konsistensi pasar menjadi tantangan utama.
-
-***Managerial Implementation*** :
-•	Optimalkan efisiensi biaya distribusi dan promosi terutama pada periode dengan volume tinggi (seperti Februari), agar peningkatan unit terjual dapat selaras dengan profitabilitas. Evaluasi struktur biaya per kategori menjadi prioritas.
-•	Fokus pada kategori resilient seperti Home Appliances dan Groceries yang tetap mencatatkan profit bahkan di kondisi melemah (April). Strategi promosi jangka panjang dapat diarahkan pada kategori ini untuk menjaga kestabilan pendapatan.
-•	Kendalikan kerugian kategori rentan (Electronics dan Apparel) melalui peninjauan ulang strategi diskon, renegosiasi pemasok, atau diferensiasi produk. Tanpa intervensi, kategori ini berisiko menjadi beban struktural saat volume menurun.
-•	Perkuat monitoring musiman: pola Januari–Maret menunjukkan perbedaan signifikan antara volume dan profit, sehingga sistem peringatan dini berbasis indikator volume dan margin perlu dikembangkan untuk mengantisipasi periode pelemahan.
-•	Diversifikasi strategi pemasaran antar-bulan: pada periode puncak penjualan, strategi volume dapat diprioritaskan, sementara pada periode lesu, fokus pada margin melalui harga premium atau bundling lebih relevan.
+- This visualization illustrates the dynamics of monthly units sold per product category. The analysis helps assess demand consistency, identify drivers and barriers to sales, and understand how sales volume affects revenue and profitability.
+- January recorded a strong start (8,098 units), generating $482,085 in profit. Most categories contributed positively, especially Apparel ($145,310) and Electronics ($131,363), reflecting early-year momentum.
+- February achieved the highest sales volume (8,678 units) but profit fell sharply to $326,262. This indicates that higher volume does not necessarily translate into higher profitability, likely due to distribution costs or suboptimal discount strategies. Electronics, for example, sold 1,133 units but contributed only $20,058 profit.
+- March saw lower sales volume (7,294 units) yet profit increased significantly to $451,834. This suggests improved cost efficiency or pricing adjustments. Groceries contributed the most ($146,503) despite not having the highest sales, highlighting effective margin management.
+- April experienced a steep decline (3,041 units) with the lowest profit ($175,384). Almost all categories weakened, particularly Apparel with just 474 units and $17,036 profit, revealing demand vulnerability and market inconsistency at the end of the period.
+  
+***Managerial Recommendation*** :
+- Improve cost efficiency in distribution and promotions during high-volume months (e.g., February) to align sales growth with profitability. Cost structure evaluation per category should be prioritized.
+- Leverage resilient categories such as Home Appliances and Groceries, which remained profitable even under weakened conditions (April). Long-term promotions should be anchored in these categories to ensure revenue stability.
+- Mitigate risks in vulnerable categories (Electronics and Apparel) by revisiting discount policies, renegotiating supplier terms, or enhancing product differentiation. Without intervention, these categories may become structural burdens during downturns.
+- Enhance seasonal monitoring: January–March patterns reveal gaps between volume and profit. An early-warning system based on volume and margin indicators is recommended to anticipate weakening periods.
+- Diversify marketing strategies across months: prioritize volume-driven strategies during peak sales periods, while focusing on margin through premium pricing or bundling in weaker months.
 
 **5. Donut Chart**  
 
-<img width="158" height="225" alt="image" src="https://github.com/user-attachments/assets/a1362b7c-0c08-4e51-95a6-99322d24060e" />
+<p align="center"> 
+   <img width="158" height="225" alt="image" src="https://github.com/user-attachments/assets/a1362b7c-0c08-4e51-95a6-99322d24060e" />
+</p>
 
 ***Data*** : `Sales_Channel`  
 
 ***Insight*** : 
-•	Visualisasi ini bermanfaat untuk memahami distribusi dan dinamika channel penjualan dengan melihat tren pertumbuhan, kategori yang dominan, serta perbedaan kontribusi antar wilayah. Dari hasil pengamatan, diperoleh beberapa poin penting:
-•	Pertumbuhan Online Channel
-Angka pertumbuhan online masih fluktuatif (43 → 46 → 40 → 41). Hal ini menunjukkan belum adanya pertumbuhan stabil, bahkan sempat mengalami penurunan pada bulan Maret. Kondisi ini menegaskan pentingnya strategi digital marketing yang lebih konsisten, misalnya melalui campaign musiman, loyalty program, atau push notification e-commerce.
-•	Distribusi Kategori Penjualan
-Electronics menjadi kontributor terbesar dengan 50%, menandakan tingginya daya tarik di pasar digital maupun fisik. Sebaliknya, kategori Groceries hanya mencapai 37%, sehingga masih terdapat ruang untuk optimalisasi, misalnya melalui promo bundle online atau kampanye khusus kebutuhan harian.
-•	Distribusi Geografis
-Surabaya mendominasi dengan kontribusi 55%, menandakan penetrasi channel yang kuat di kota besar. Sementara itu, Bali hanya 37%, yang mengindikasikan potensi pasar yang belum tergarap maksimal, terutama melalui online channel yang dapat menjangkau konsumen wisatawan maupun lokal.
+- This visualization helps to understand the distribution and dynamics of sales channels by observing growth trends, dominant categories, and differences in regional contributions. 
+- Online growth remains volatile (43% → 46% → 40% → 41%), showing no stable upward trend and even a decline in March. 
+- Sales Category Distribution : Electronics contributes the most at 50%, reflecting strong market demand both online and offline. On the other hand, Groceries only account for 37%.
+- Geographic Distribution : Surabaya leads with a 55% contribution, signaling strong channel penetration in major cities. Meanwhile, Bali lags at 37%, showing untapped potential—especially through online channels.
 
-***Manajerial implementasi*** :
-•	Meningkatkan stabilitas pertumbuhan online melalui campaign berkesinambungan, seperti program loyalitas dan seasonal campaign.
-•	Mengoptimalkan kategori groceries agar lebih kompetitif di online dengan strategi promosi yang lebih menarik (contohnya bundle promo kebutuhan harian).
-•	Memperluas penetrasi di daerah non-dominan seperti Bali dengan memanfaatkan kanal online sebagai sarana menjangkau segmen wisatawan dan masyarakat lokal.
-
+***Managerial Recommendation*** :
+- Enhance online growth stability through continuous campaigns such as loyalty programs and seasonal promotions, or e-commerce push notifications.
+- Strengthen the competitiveness of groceries online by offering attractive promotional strategies (e.g., bundled daily needs).
+- Expand penetration in non-dominant regions such as Bali by leveraging online channels to target tourists and local communities.
+  
 **6. Age Group Revenue Distribution – Bar Chart**
 
-<img width="326" height="222" alt="image" src="https://github.com/user-attachments/assets/e845947a-0439-44d4-8bca-f32bef055318" />
+<p align="center"> 
+   <img width="326" height="222" alt="image" src="https://github.com/user-attachments/assets/e845947a-0439-44d4-8bca-f32bef055318" />
+</p>
 
 ***Data*** : `Customer_Age_Group` , `Total_Revenue`  
 
 ***Insight*** : 
-Visualisasi ini digunakan untuk mengevaluasi kontribusi pendapatan (revenue) berdasarkan kelompok usia, dengan perbandingan terhadap rata-rata keseluruhan melalui garis pembanding horizontal. Analisis ini penting karena mengungkap pola konsumsi spesifik tiap kelompok usia, sehingga manajemen dapat menyesuaikan strategi pemasaran dan penjualan secara lebih presisi.
-•	Kelompok Usia 26–35
-o	Revenue offline ($465,163) dan online ($480,793) sama-sama berada jauh di atas rata-rata.
-o	Menjadi segmen dengan prime spending power: daya beli tinggi, konsumsi stabil, dan adaptif di dua channel.
-o	Peran mereka sebagai backbone revenue sangat menonjol, terutama karena konsistensi di seluruh kanal.
-•	Kelompok Usia 36–45
-o	Offline revenue tertinggi ($473,989), menunjukkan preferensi kuat pada toko fisik.
-o	Namun online revenue sangat rendah ($142,512), menandakan adanya kesenjangan digital adoption.
-o	Segmen ini menjadi target utama untuk edukasi digital dan perlu didorong transisi ke kanal online.
-•	Kelompok Usia 46–55 : Berkontribusi rendah di offline ($205,852), namun justru mendominasi online ($634,251). Fenomena ini menandakan pola selective channeling: mereka beralih ke online untuk pembelian bernilai tinggi, kemungkinan karena faktor kenyamanan dan aksesibilitas.
-o	Potensi premium customer kuat, meskipun partisipasi di offline terbatas.
-•	Kelompok Usia 18–25
-o	Revenue offline ($394,259) sedikit di atas rata-rata, menandakan preferensi terhadap pengalaman langsung di toko.
-o	Namun di online hanya $203,373 (jauh di bawah rata-rata), meskipun segmen ini dikenal tech-savvy.
-o	Indikasi adanya mismatch strategi (harga, positioning, engagement). Potensi besar, tetapi belum termanfaatkan optimal.
+- This visualization evaluates revenue contribution by age group, benchmarked against the overall average. The analysis reveals consumption patterns unique to each segment, enabling management to tailor marketing and sales strategies more precisely.
+- Age 26–35 : Offline ($465,163) and online ($480,793) both far exceed the average.
+Prime spending power with consistent demand across channels. Backbone of company revenue.
+- Age 36–45 : Highest offline revenue ($473,989), but online lags far behind ($142,512). Shows strong reliance on physical stores and weak digital adoption.
+Key target for digital transition.
+- Age 46–55 : Low offline revenue ($205,852) but dominant online ($634,251).
+Selective channeling—prefers online for high-value purchases.
+Strong premium potential.
+- Age 18–25 : Offline revenue above average ($394,259), but online weak ($203,373).
+Despite being tech-savvy, engagement strategies seem misaligned.
+High untapped potential.
 
-***Managerial Implementation*** : 
-•	18–25: Optimalisasi kanal digital dengan strategi promosi berbasis mahasiswa (student discount), gamifikasi, serta bundling produk bernilai rendah. Kanal offline diperkuat melalui pendekatan experiential marketing seperti event interaktif dan demonstrasi produk
-•	26–35: Penerapan strategi omnichannel sebagai segmen utama, dengan penekanan pada integrasi program loyalitas lintas kanal, sinkronisasi inventori, serta penyediaan layanan purna jual yang konsisten
-•	36–45: Kanal offline diposisikan sebagai sumber pendapatan utama, dengan upaya bertahap untuk mendorong adopsi kanal online melalui strategi edukasi dan pembangunan kepercayaan (trust-building), seperti pemberian garansi, opsi pembayaran COD, serta dukungan purna jual (after-sales). 
-•	46–55: Fokus diarahkan pada kanal online dengan pendekatan premium, mencakup penawaran produk eksklusif, layanan pengiriman prioritas, dan konten yang dipersonalisasi, sementara investasi pada kanal offline dapat diminimalkan.
-
-
-
-
+***Managerial Recommendation*** : 
+- 18–25: Boost digital engagement via student discounts, gamification, and low-cost bundles. Enhance offline with experiential marketing (e.g., interactive events).
+- 26–35: Drive omnichannel loyalty with integrated rewards, synchronized inventory, and consistent after-sales service.
+- 36–45: Keep offline as the core revenue driver, while gradually shifting them online through trust-building measures (warranties, COD, after-sales support).
+- 46–55: Prioritize online with premium offerings, exclusive products, priority delivery, and personalized content. Limit offline investment.
 
