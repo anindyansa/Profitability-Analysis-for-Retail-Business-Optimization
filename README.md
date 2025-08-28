@@ -1,5 +1,4 @@
-# judul 
-## Table of Contents
+# Profitability Analysis for Retail Business Optimization
 
 
 ### Project Overview
